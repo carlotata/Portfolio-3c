@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ModeToggle } from "./theme-toggle";
+import { ModeToggle } from "./provider/theme-toggle";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function MobileMenu() {
    const [open, setOpen] = useState(false);
+
+   // Helper function to handle closing the menu
+   const closeMenu = () => setOpen(false);
 
    return (
       <div className="sm:hidden w-full relative flex justify-center">
@@ -51,25 +54,25 @@ export default function MobileMenu() {
                <nav className="flex flex-col divide-y divide-black/10">
                   <Link
                      href="/"
-                     onClick={() => setOpen(false)}
+                     onClick={closeMenu}
                      className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
                      Home
                   </Link>
                   <Link
                      href="/blogs"
-                     onClick={() => setOpen(false)}
+                     onClick={closeMenu}
                      className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
                      Blogs
                   </Link>
                   <Link
                      href="/about"
-                     onClick={() => setOpen(false)}
+                     onClick={closeMenu}
                      className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
                      About Me
                   </Link>
                   <Link
                      href="/projects"
-                     onClick={() => setOpen(false)}
+                     onClick={closeMenu}
                      className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
                      Projects
                   </Link>
@@ -77,7 +80,12 @@ export default function MobileMenu() {
                   <div className="flex gap-3 p-4">
                      <Button
                         className="flex-1 bg-[#444444] text-white text-xs font-bold py-3 rounded-full hover:bg-black uppercase tracking-wider transition-colors duration-200"
-                        onClick={() => setOpen(false)}>
+                        onClick={() => {
+                           document.getElementById("contact")?.scrollIntoView({
+                              behavior: "smooth",
+                           });
+                           closeMenu();
+                        }}>
                         MESSAGE NOW
                      </Button>
                      <ModeToggle />

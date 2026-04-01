@@ -66,7 +66,7 @@ export function ProjectShowcase() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center text-2xl sm:text-3xl font-black tracking-[0.3em] mb-12 uppercase text-[#1A1A1A]">
+            className="text-center text-2xl sm:text-3xl font-black tracking-[0.3em] mb-12">
             Project Showcase
          </motion.h2>
 

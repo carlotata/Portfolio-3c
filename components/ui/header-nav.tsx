@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "@/components/ui/theme-toggle";
+import { ModeToggle } from "@/components/ui/provider/theme-toggle";
 import MobileMenu from "@/components/ui/mobilemenu";
 import { useEffect, useState } from "react";
 
@@ -37,9 +37,7 @@ export default function Navbar() {
             {/* Desktop Navbar */}
             <div
                className={`hidden sm:flex bg-[#8A8A8A] px-8 py-3 items-center gap-10 shadow-lg transition-all duration-500 ease-in-out ${
-                  isScrolled
-                     ? "rounded-bl-[40px]"
-                     : "rounded-bl-[40px]"
+                  isScrolled ? "rounded-bl-[40px]" : "rounded-bl-[40px]"
                }`}>
                <nav className="flex gap-8">
                   <Link href="/" className={linkClass("/")}>

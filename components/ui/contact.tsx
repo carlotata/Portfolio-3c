@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
-import { sendEmail } from "@/app/actions/sendemail";
+import { sendEmail } from "@/components/ui/provider/actions/sendemail";
 
 export function ContactSection() {
    const [isPending, setIsPending] = useState(false);
@@ -22,11 +22,13 @@ export function ContactSection() {
    }
 
    return (
-      <section className="py-24 px-4 sm:px-10 max-w-6xl mx-auto w-full">
+      <section
+         id="contact"
+         className="py-24 px-4 sm:px-10 max-w-6xl mx-auto w-full">
          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center text-2xl sm:text-4xl font-black tracking-[0.3em] mb-16 uppercase text-[#1A1A1A]">
+            className="text-center text-2xl sm:text-4xl font-black tracking-[0.3em] mb-16">
             Let&apos;s Talk It Out!
          </motion.h2>
 
@@ -34,7 +36,6 @@ export function ContactSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="flex flex-col md:flex-row border border-black/5 rounded-[2.5rem] sm:rounded-[3.5rem] overflow-hidden bg-white/40 backdrop-blur-xl shadow-2xl">
-
             <div className="w-full md:w-1/2 bg-[#1A1A1A] p-12 flex flex-col justify-between text-white relative overflow-hidden">
                <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-white/5 rounded-full blur-3xl" />
                <div className="relative z-10">
