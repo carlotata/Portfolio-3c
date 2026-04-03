@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/ui/provider/theme-provider";
+import { ThemeProvider } from "@/components/provider/theme-provider";
 import "@/styles/globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+   variable: "--font-geist-sans",
+   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+   variable: "--font-geist-mono",
+   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio: Carl Aviso",
-  description: "Made by yours truly",
+   title: "Portfolio: Carl Aviso",
+   description: "Made by yours truly",
 };
 
 export default function RootLayout({
-  children,
+   children,
 }: Readonly<{
-  children: React.ReactNode;
+   children: React.ReactNode;
 }>) {
-  return (
-     <html lang="en" suppressHydrationWarning>
-        <body
-           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-           <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange>
-              {children}
-           </ThemeProvider>
-        </body>
-     </html>
-  );
+   return (
+      <html lang="en" suppressHydrationWarning>
+         <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <ThemeProvider
+               attribute="class"
+               defaultTheme="system"
+               enableSystem
+               disableTransitionOnChange>
+               {children}
+            </ThemeProvider>
+         </body>
+      </html>
+   );
 }
