@@ -1,10 +1,10 @@
-import Mainlayout from "@/components/ui/mainlayout";
-import { ProjectShowcase } from "@/components/ui/projectshowcase";
-import { ContactSection } from "@/components/ui/contact";
+import Mainlayout from "@/components/features/homepage/mainlayout";
+import { ProjectShowcase } from "@/components/common/projectshowcase";
+import { ContactSection } from "@/components/common/contact";
 
 export default function HomePage() {
    return (
-      <div className="min-h-screen font-sans overflow-hidden relative">
+      <div id="top">
          <Mainlayout/>
          <ProjectShowcase />
          <ContactSection />

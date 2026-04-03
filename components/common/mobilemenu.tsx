@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ModeToggle } from "./provider/theme-toggle";
+import { ModeToggle } from "../ui/theme-toggle";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 

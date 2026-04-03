@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { HeroImage } from "@/components/ui/heroimage";
+import { HeroImage } from "@/components/features/homepage/heroimage";
 import { Button } from "@/components/ui/button";
 import { Sparkles, GraduationCap, MapPin } from "lucide-react";
 
@@ -31,9 +31,18 @@ export default function Mainlayout() {
             JOHN CARL AVISO
          </motion.h1>
 
-         <div className="absolute inset-0 flex justify-center items-end z-10 pointer-events-none transform -translate-y-20 scale-110 sm:translate-y-0 sm:scale-100">
+         <motion.div
+            initial={{ y: 200, opacity: 0, scale: 0.9 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{
+               type: "spring",
+               damping: 20,
+               stiffness: 40,
+               delay: 0.6,
+            }}
+            className="absolute inset-0 flex justify-center items-end z-10 pointer-events-none transform -translate-y-20 scale-110 sm:translate-y-0 sm:scale-100">
             <HeroImage />
-         </div>
+         </motion.div>
 
          <div className="relative z-20 w-full sm:w-auto sm:mr-auto max-w-sm mt-[45vh] sm:mt-20 mb-10 sm:mb-0">
             <motion.div

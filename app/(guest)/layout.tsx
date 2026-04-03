@@ -1,5 +1,5 @@
-import Navbar from "@/components/ui/header-nav";
-import Footer from "@/components/ui/footer";
+import Navbar from "@/components/common/header-nav";
+import Footer from "@/components/common/footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 

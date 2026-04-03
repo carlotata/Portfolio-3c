@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "@/components/ui/provider/theme-toggle";
-import MobileMenu from "@/components/ui/mobilemenu";
+import { ModeToggle } from "@/components/ui/theme-toggle";
+import MobileMenu from "@/components/common/mobilemenu";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
-import { sendEmail } from "@/components/ui/provider/actions/sendemail";
+import { sendEmail } from "@/components/provider/actions/sendemail";
 
 export function ContactSection() {
    const [isPending, setIsPending] = useState(false);
