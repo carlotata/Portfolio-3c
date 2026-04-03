@@ -34,7 +34,7 @@ export default function Navbar() {
                   ? "justify-end px-0"
                   : "justify-end pr-0 pt-4 sm:pr-6 sm:pt-6"
             }`}>
-            {/* Desktop Navbar */}
+
             <div
                className={`hidden sm:flex bg-[#8A8A8A] px-8 py-3 items-center gap-10 shadow-lg transition-all duration-500 ease-in-out ${
                   isScrolled ? "rounded-bl-[40px]" : "rounded-bl-[40px]"
@@ -43,7 +43,7 @@ export default function Navbar() {
                   <Link href="/" className={linkClass("/")}>
                      Home
                   </Link>
-                  <Link href="/blogs" className={linkClass("/blogs")}>
+                  <Link href="/blog" className={linkClass("/blog")}>
                      Blogs
                   </Link>
                   <Link href="/about" className={linkClass("/about")}>
@@ -56,7 +56,6 @@ export default function Navbar() {
                <ModeToggle />
             </div>
 
-            {/* Mobile */}
             <MobileMenu />
          </div>
       </header>

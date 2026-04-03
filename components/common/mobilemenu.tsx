@@ -8,13 +8,12 @@ import { Button } from "@/components/ui/button";
 export default function MobileMenu() {
    const [open, setOpen] = useState(false);
 
-   // Helper function to handle closing the menu
    const closeMenu = () => setOpen(false);
 
    return (
       <div className="sm:hidden w-full relative flex justify-center">
          <div className="relative w-full max-w-md px-2">
-            {/* Centered menu button */}
+
             <button
                onClick={() => setOpen(!open)}
                className="w-full bg-[#8A8A8A] py-3 shadow-lg flex items-center justify-center gap-3 rounded-full transition-all duration-300 hover:bg-[#7a7a7a] active:scale-95"
@@ -24,7 +23,6 @@ export default function MobileMenu() {
                   Menu
                </span>
 
-               {/* Animated burger icon */}
                <div className="space-y-1.5 transition-transform duration-300">
                   <span
                      className={`block w-5 h-0.5 bg-black transition-all duration-300 ${
@@ -44,7 +42,6 @@ export default function MobileMenu() {
                </div>
             </button>
 
-            {/* Dropdown menu with animation */}
             <div
                className={`absolute left-3 right-3 top-full mt-1 bg-[#acacac] shadow-xl rounded-2xl overflow-hidden transition-all duration-300 origin-top ${
                   open
@@ -59,7 +56,7 @@ export default function MobileMenu() {
                      Home
                   </Link>
                   <Link
-                     href="/blogs"
+                     href="/blog"
                      onClick={closeMenu}
                      className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
                      Blogs
