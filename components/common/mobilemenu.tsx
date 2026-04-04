@@ -77,7 +77,8 @@ export default function MobileMenu() {
                            Contact
                         </button>
                      </Link>
-                     <ModeToggle />
+
+                     <ModeToggle onToggle={closeMenu} />
                   </div>
                </nav>
             </div>
