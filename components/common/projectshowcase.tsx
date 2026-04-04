@@ -25,7 +25,6 @@ export function ProjectShowcase() {
 
    return (
       <section className="py-20 px-4 sm:px-10 max-w-8xl mx-auto w-full overflow-hidden">
-         {/* Title */}
          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +37,6 @@ export function ProjectShowcase() {
             A curated selection of projects demonstrating my skills
          </p>
 
-         {/* Card Container */}
          <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 50 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -72,7 +70,6 @@ export function ProjectShowcase() {
                               bg-[#D9D9D9] dark:bg-[#1a1a1a] 
                               rounded-2xl overflow-hidden cursor-pointer 
                               border border-black/5 dark:border-white/10">
-                                 {/* Image */}
                                  <div className="absolute inset-0 flex items-center justify-center">
                                     <img
                                        src={project.image}
@@ -81,7 +78,6 @@ export function ProjectShowcase() {
                                     />
                                  </div>
 
-                                 {/* Hover Overlay */}
                                  <div
                                     className="absolute inset-0 
                                  bg-linear-to-t from-black/90 via-black/30 to-transparent 
@@ -117,7 +113,6 @@ export function ProjectShowcase() {
                      ))}
                </CarouselContent>
 
-               {/* Mobile Controls */}
                {isMounted && (
                   <div className="flex justify-center mt-8 gap-4 sm:hidden">
                      <CarouselPrevious

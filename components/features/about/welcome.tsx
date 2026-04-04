@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export function Welcome() {
@@ -9,11 +9,12 @@ export function Welcome() {
    const isInView = useInView(statsRef, { once: true });
    const [projectsCount, setProjectsCount] = useState(0);
 
+   // Animate projects count
    useEffect(() => {
       if (isInView) {
          let start = 0;
-         const end = 20; 
-         const duration = 1200; 
+         const end = 20;
+         const duration = 1200;
          const stepTime = Math.abs(Math.floor(duration / end));
          const timer = setInterval(() => {
             start += 1;
@@ -26,6 +27,7 @@ export function Welcome() {
    return (
       <section className="py-20 px-4 sm:px-10 max-w-6xl mx-auto overflow-hidden">
          <div className="flex flex-col md:flex-row items-center justify-between gap-32 md:gap-40">
+            {/* Profile Image */}
             <motion.div
                initial={{ opacity: 0, x: -50 }}
                animate={{ opacity: 1, x: 0 }}
@@ -34,23 +36,30 @@ export function Welcome() {
                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-75 h-75 md:w-105 md:h-105 bg-muted rounded-full z-0" />
                <div className="absolute inset-0 z-10">
                   <Image
-                     src="/aboutme.png"
+                     src="/additionals/aboutmenormal.png"
                      alt="Profile photo"
                      fill
-                     className="object-contain object-bottom drop-shadow-md"
+                     className="object-contain object-bottom drop-shadow-md dark:hidden"
                      priority
-                     sizes="(max-width: 768px) 300px, 420px"
+                  />
+                  <Image
+                     src="/additionals/aboutmeabnormal.png"
+                     alt="Profile photo"
+                     fill
+                     className="object-contain object-bottom drop-shadow-md hidden dark:block"
+                     priority
                   />
                </div>
             </motion.div>
 
+            {/* Text Content */}
             <motion.div
                initial={{ opacity: 0, x: 50 }}
                animate={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                className="flex-1 flex flex-col items-center md:items-start text-center md:text-left z-10 w-full">
                <p className="text-[10.5px] font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">
-                  ABOUT
+                  WHO AM I?
                </p>
 
                <h1
@@ -60,11 +69,9 @@ export function Welcome() {
                   <em className="font-normal italic">Aviso</em>
                </h1>
 
-               <p className="text-sm md:text-base font-light tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                  Full Stack Developer&nbsp;&middot;&nbsp;Cebu City, PH
+               <p className="text-sm md:text-base font-light tracking-widest uppercase text-muted-foreground mb-12 border-b border-foreground inline-block">
+                  Designer/Developer&nbsp;&middot;&nbsp;Cebu City, PH
                </p>
-
-               <div className="w-55 h-px bg-foreground rounded-sm mb-5 mx-auto md:mx-0" />
 
                <p className="text-[14.5px] leading-[1.8] text-muted-foreground max-w-100 mb-8 mx-auto md:mx-0">
                   I build{" "}
@@ -88,8 +95,8 @@ export function Welcome() {
                   <motion.a
                      whileHover={{ scale: 1.05 }}
                      whileTap={{ scale: 0.95 }}
-                     href="/resume.pdf"
-                     download="Carl_Aviso_Resume.pdf"
+                     href="/additionals/Resume-CarlAviso.pdf"
+                     download="Resume-CarlAviso.pdf"
                      className="flex items-center justify-center gap-2 bg-black text-white border-2 border-black hover:bg-white hover:text-black rounded-none shadow-none w-40 h-12 uppercase text-xs tracking-widest font-semibold transition-all duration-150">
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -118,9 +125,10 @@ export function Welcome() {
                   </motion.a>
                </div>
 
+               {/* Stats */}
                <div
                   ref={statsRef}
-                  className="flex flex-row gap-8 mt-10 pt-8 border-t border-border/30 w-full max-w-100 mx-auto md:mx-0 justify-center md:justify-start">
+                  className="flex flex-row gap-8 mt-10 pt-2 border-t border-border/30 w-full max-w-100 mx-auto md:mx-0 justify-center md:justify-start">
                   <div className="border-r border-border/30 pr-8">
                      <p
                         className="text-3xl font-semibold leading-none text-foreground mb-1"
