@@ -1,0 +1,151 @@
+{
+   "personal": {
+      "name": "John Carl Aviso",
+      "title": "Frontend / UI/UX Developer",
+      "location": "Cebu City, Philippines",
+      "bio": "I build modern, responsive web apps and immersive UI/UX designs, blending design and code seamlessly. My portfolio showcases projects spanning web applications, Figma designs, and interactive experiences."
+   },
+   "skills": {
+      "frontend": [
+         "Next.js",
+         "React",
+         "Tailwind CSS",
+         "TypeScript",
+         "JavaScript",
+         "HTML",
+         "CSS"
+      ],
+      "uiux": [
+         "Figma",
+         "Motion Design (Framer Motion)",
+         "Responsive Design",
+         "Dark/Light Mode",
+         "Accessibility"
+      ],
+      "tools": [
+         "Git",
+         "GitHub",
+         "Vercel",
+         "APIs",
+         "PWA",
+         "TikTokLiveConnector",
+         "Node.js"
+      ]
+   },
+   "projects": [
+      {
+         "id": 1,
+         "title": "Robo Sole",
+         "category": "UI/UX Design",
+         "description": "A futuristic design mock-up using Figma by a client request.",
+         "tech": ["Figma"],
+         "link": "https://www.figma.com/design/U4W0ZE9jRWKjl9HSaZPv3T/DESIGN-SAMPLES?node-id=123-30&p=f&t=SKKKzRFQffgkoAaZ-0"
+      },
+      {
+         "id": 2,
+         "title": "FitLife",
+         "category": "UI/UX Design",
+         "description": "A simple Fitness UI/UX Design.",
+         "tech": ["Figma"],
+         "link": "https://www.figma.com/design/U4W0ZE9jRWKjl9HSaZPv3T/DESIGN-SAMPLES?node-id=61-30&p=f&t=SKKKzRFQffgkoAaZ-0"
+      },
+      {
+         "id": 3,
+         "title": "Apex Vision",
+         "category": "UI/UX Design",
+         "description": "A minimalistic Sports Glass UI/UX Design.",
+         "tech": ["Figma"],
+         "link": "https://www.figma.com/design/U4W0ZE9jRWKjl9HSaZPv3T/DESIGN-SAMPLES?node-id=178-30&p=f&t=SKKKzRFQffgkoAaZ-0"
+      },
+      {
+         "id": 4,
+         "title": "1st Year Projects",
+         "category": "Web Application",
+         "description": "A compilation of my 1st Year Projects.",
+         "tech": ["HTML", "CSS", "JavaScript"],
+         "link": "https://github.com/carlotata/1st-Year"
+      },
+      {
+         "id": 5,
+         "title": "2nd Year Projects",
+         "category": "Web Application",
+         "description": "A compilation of my 2nd Year Projects.",
+         "tech": ["HTML", "CSS", "JavaScript"],
+         "link": "https://github.com/carlotata/2nd-Year"
+      },
+      {
+         "id": 6,
+         "title": "Duck Game TikTok Live",
+         "category": "Interactive Game",
+         "description": "An interactive duck-themed game for TikTok Live streams.",
+         "tech": ["HTML", "CSS", "JS", "TikTokLiveConnector"],
+         "link": "https://github.com/carlotata/DuckRaceGame-TikTokLive"
+      },
+      {
+         "id": 7,
+         "title": "Girls vs Boys",
+         "category": "Interactive Game",
+         "description": "A competitive game where viewers participate via TikTok Live.",
+         "tech": ["HTML", "CSS", "JS", "TikTokLiveConnector"],
+         "link": "https://github.com/carlotata/GirlsvsBoys-TikTokLive"
+      },
+      {
+         "id": 8,
+         "title": "BedrockLive Plugin",
+         "category": "Plugin Development",
+         "description": "Custom plugin for BedrockLive integration for live-stream features.",
+         "tech": ["JS", "Node.js", "TikTokLiveConnector"],
+         "link": "https://github.com/carlotata/Underwaterlive"
+      },
+      {
+         "id": 9,
+         "title": "Excrate",
+         "category": "Web Application",
+         "description": "An API practice project featuring a PWA with full installation support.",
+         "tech": ["HTML", "CSS", "JS", "API", "PWA"],
+         "link": "https://github.com/carlotata/ExcRate"
+      }
+   ],
+   "blogPosts": [
+      {
+         "id": 1,
+         "title": "My 3rd Year Roadmap",
+         "excerpt": "A retrospective on my progress from Cordova Public College to building full-stack design systems.",
+         "categories": ["academic", "roadmap"],
+         "date": "2025-02-15"
+      },
+      {
+         "id": 2,
+         "title": "Motion as a Design Language",
+         "excerpt": "How I use Framer Motion to make my Next.js projects feel tactile and alive.",
+         "categories": ["design", "framer"],
+         "date": "2025-03-01"
+      },
+      {
+         "id": 3,
+         "title": "Figma to Tailwind Workflow",
+         "excerpt": "Translating high-fidelity prototypes into production code.",
+         "categories": ["tech", "figma"],
+         "date": "2024-11-10"
+      },
+      {
+         "id": 4,
+         "title": "Why I Switched to the App Router",
+         "excerpt": "File-based routing, server components, and layouts in Next.js.",
+         "categories": ["tech", "nextjs"],
+         "date": "2025-01-20"
+      },
+      {
+         "id": 5,
+         "title": "Designing Robo Sole",
+         "excerpt": "A breakdown of the futuristic sneaker UI/UX I built for a client in Figma.",
+         "categories": ["design", "figma"],
+         "date": "2025-03-10"
+      }
+   ],
+   "contact": {
+      "email": "[your email]",
+      "github": "https://github.com/carlotata",
+      "linkedin": "[your LinkedIn URL]"
+   }
+}
