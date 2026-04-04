@@ -11,10 +11,7 @@ export default function Navbar() {
    const [isScrolled, setIsScrolled] = useState(false);
 
    useEffect(() => {
-      const handleScroll = () => {
-         setIsScrolled(window.scrollY > 1);
-      };
-
+      const handleScroll = () => setIsScrolled(window.scrollY > 1);
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
    }, []);
@@ -34,12 +31,10 @@ export default function Navbar() {
                   ? "justify-end px-0"
                   : "justify-end pr-0 pt-4 sm:pr-6 sm:pt-6"
             }`}>
-
+            {/* Desktop Navbar */}
             <div
-               className={`hidden sm:flex bg-[#8A8A8A] px-8 py-3 items-center gap-10 shadow-lg transition-all duration-500 ease-in-out ${
-                  isScrolled ? "rounded-bl-[40px]" : "rounded-bl-[40px]"
-               }`}>
-               <nav className="flex gap-8">
+               className={`hidden sm:flex bg-[#8A8A8A] px-8 py-3 items-center gap-6 shadow-lg transition-all duration-500 ease-in-out rounded-bl-[40px]`}>
+               <nav className="flex gap-6 items-center">
                   <Link href="/" className={linkClass("/")}>
                      Home
                   </Link>
@@ -52,10 +47,15 @@ export default function Navbar() {
                   <Link href="/projects" className={linkClass("/projects")}>
                      Projects
                   </Link>
+
+                  <Link href="/contact">
+                     <button className="px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-xl bg-black text-white hover:bg-white hover:text-black border-2 border-black dark:bg-white dark:text-black dark:border-white dark:hover:bg-black dark:hover:text-white transition-all duration-200">
+                        Contact
+                     </button>
+                  </Link>
                </nav>
                <ModeToggle />
             </div>
-
             <MobileMenu />
          </div>
       </header>

@@ -3,23 +3,11 @@
 import { useState } from "react";
 import { ModeToggle } from "../ui/theme-toggle";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 
 export default function MobileMenu() {
    const [open, setOpen] = useState(false);
-   const pathname = usePathname();
 
    const closeMenu = () => setOpen(false);
-
-   const handleContact = () => {
-      closeMenu();
-      if (pathname === "/") {
-         document
-            .getElementById("contact")
-            ?.scrollIntoView({ behavior: "smooth" });
-      }
-   };
 
    return (
       <div className="sm:hidden w-full relative flex justify-center">
@@ -29,8 +17,6 @@ export default function MobileMenu() {
                className="w-full bg-[#8A8A8A] py-3 shadow-lg flex items-center justify-center gap-3 rounded-full transition-all duration-300 hover:bg-[#7a7a7a] active:scale-95"
                aria-label="Toggle menu"
                aria-expanded={open}>
-               <span className="text-sm font-semibold uppercase tracking-wide"></span>
-
                <div className="space-y-1.5 transition-transform duration-300">
                   <span
                      className={`block w-5 h-0.5 bg-black transition-all duration-300 ${
@@ -84,12 +70,12 @@ export default function MobileMenu() {
 
                   <div className="flex gap-3 p-4">
                      <Link
-                        href="/#contact"
-                        onClick={handleContact}
+                        href="/contact"
+                        onClick={closeMenu}
                         className="flex-1">
-                        <Button className="w-full bg-[#444444] text-white text-xs font-bold py-3 rounded-full hover:bg-black uppercase tracking-wider transition-colors duration-200">
-                           MESSAGE NOW
-                        </Button>
+                        <button className="w-full bg-black text-white text-xs font-bold py-3 rounded-full hover:bg-white hover:text-black uppercase tracking-wider transition-colors duration-200">
+                           Contact
+                        </button>
                      </Link>
                      <ModeToggle />
                   </div>

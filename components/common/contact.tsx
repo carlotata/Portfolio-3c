@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2 } from "lucide-react";
 import { sendEmail } from "@/components/provider/actions/sendemail";
 
 export function ContactSection() {
@@ -28,14 +28,15 @@ export function ContactSection() {
          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center text-2xl sm:text-4xl font-black tracking-[0.3em] mb-16">
+            className="text-center text-2xl sm:text-4xl font-black tracking-[0.3em] mb-16"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             Let&apos;s Talk It Out!
          </motion.h2>
 
          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="flex flex-col md:flex-row border border-black/5 rounded-[2.5rem] sm:rounded-[3.5rem] overflow-hidden bg-white/40 backdrop-blur-xl shadow-2xl">
+            className="flex flex-col md:flex-row border border-black/5 rounded-2xl sm:rounded-2xl overflow-hidden bg-white/40 backdrop-blur-xl shadow-2xl">
             <div className="w-full md:w-1/2 bg-[#1A1A1A] p-12 flex flex-col justify-between text-white relative overflow-hidden">
                <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-white/5 rounded-full blur-3xl" />
                <div className="relative z-10">
@@ -48,20 +49,24 @@ export function ContactSection() {
                         Active for Work
                      </span>
                   </div>
-                  <h3 className="text-4xl sm:text-5xl font-black leading-none uppercase tracking-tighter mb-4">
-                     Have a <br />{" "}
+                  <h3
+                     className="text-4xl sm:text-5xl font-black leading-none uppercase tracking-tighter mb-4"
+                     style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                     Have a <br />
                      <span className="text-white/40">Great Idea?</span>
                   </h3>
                </div>
-               <p className="relative z-10 text-white/60 text-sm font-medium max-w-62.5">
+               <p
+                  className="relative z-10 text-white/60 text-sm font-medium max-w-62.5"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   Send me a message and let&apos;s turn your vision into
                   reality.
                </p>
             </div>
-
+            
             <div className="w-full md:w-1/2 p-10 sm:p-16 bg-white/10 border-t md:border-t-0 md:border-l border-black/5 relative">
                <AnimatePresence>
-                  {isSuccess ? (
+                  {isSuccess && (
                      <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -71,19 +76,29 @@ export function ContactSection() {
                            size={64}
                            className="text-green-500 mb-4"
                         />
-                        <h4 className="text-2xl font-black uppercase tracking-tighter">
+                        <h4
+                           className="text-2xl font-black uppercase tracking-tighter"
+                           style={{
+                              fontFamily: "'Cormorant Garamond', serif",
+                           }}>
                            Message Sent!
                         </h4>
-                        <p className="text-sm font-medium text-black/50 mt-2">
+                        <p
+                           className="text-sm font-medium text-black/50 mt-2"
+                           style={{
+                              fontFamily: "'Cormorant Garamond', serif",
+                           }}>
                            Thanks, John Carl will get back to you soon.
                         </p>
                      </motion.div>
-                  ) : null}
+                  )}
                </AnimatePresence>
 
                <form action={handleSubmit} className="space-y-6">
                   <div>
-                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 mb-2 block">
+                     <label
+                        className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 mb-2 block"
+                        style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                         Your Email
                      </label>
                      <input
@@ -96,7 +111,9 @@ export function ContactSection() {
                   </div>
 
                   <div>
-                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 mb-2 block">
+                     <label
+                        className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 mb-2 block"
+                        style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                         Your Message
                      </label>
                      <textarea
@@ -109,7 +126,8 @@ export function ContactSection() {
 
                   <Button
                      disabled={isPending}
-                     className="group w-full bg-[#1A1A1A] text-white h-16 rounded-2xl font-black tracking-[0.2em] transition-all hover:bg-black flex items-center justify-center gap-3 overflow-hidden relative shadow-xl">
+                     className="group w-full bg-[#1A1A1A] text-white h-16 rounded-2xl font-black tracking-[0.2em] transition-all hover:bg-black flex items-center justify-center gap-3 overflow-hidden relative shadow-xl"
+                     style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                      <span className="relative z-10 flex items-center gap-2">
                         {isPending ? "SENDING..." : "SAY HELLO"}
                         {!isPending && (

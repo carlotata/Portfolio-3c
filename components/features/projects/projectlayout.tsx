@@ -45,7 +45,7 @@ export function ProjectLayout() {
    const [selectedCategory, setSelectedCategory] = useState("All");
    const [currentPage, setCurrentPage] = useState(1);
 
-   const itemsPerPage = 6;
+   const itemsPerPage = 8;
 
    const categories = useMemo(() => {
       const allCategories = projects.map((p) => p.category);

@@ -40,7 +40,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <img
                src={project.image}
                alt={`Screenshot of ${project.title}`}
-               className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0 brightness-75 group-hover:brightness-100"
+               className="w-full h-full object-cover transition-all duration-500 brightness-75 group-hover:brightness-100"
             />
          </div>
 
