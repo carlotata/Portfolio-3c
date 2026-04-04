@@ -26,14 +26,6 @@ export function ProjectShowcase() {
    return (
       <section className="py-20 px-4 sm:px-10 max-w-8xl mx-auto w-full overflow-hidden">
          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center text-3xl sm:text-3xl font-black tracking-[0.3em] mb-12">
-            Project Showcase
-         </motion.h2>
-
-         <motion.h2
             initial={{ opacity: 0, scale: 0.95, y: 50 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

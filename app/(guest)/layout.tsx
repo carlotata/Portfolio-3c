@@ -2,6 +2,10 @@ import Navbar from "@/components/common/header-nav";
 import Footer from "@/components/common/footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
+<link
+   href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+   rel="stylesheet"
+/>;
 
 const geistSans = Geist({
    variable: "--font-geist-sans",

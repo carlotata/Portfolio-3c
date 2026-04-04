@@ -1,9 +1,15 @@
+import { EducationExperience } from "@/components/features/about/educ-exp";
+import { TechStack } from "@/components/features/about/techstack";
+import { Welcome } from "@/components/features/about/welcome";
+import { ContactSection } from "@/components/common/contact";
+
 export default function AboutPage() {
    return (
-      <div className="min-h-screen font-sans overflow-hidden relative">
-         <div className="relative flex items-center justify-center min-h-screen px-4 sm:px-10">
-            About Page
-         </div>
-      </div>
+      <>
+         <Welcome />
+         <EducationExperience />
+         <TechStack />
+         <ContactSection />
+      </>
    );
 }
