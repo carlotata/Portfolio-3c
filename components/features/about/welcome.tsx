@@ -76,7 +76,7 @@ export function Welcome() {
                   functional — but genuinely great to use.
                </p>
 
-               <div className="flex items-center gap-2.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-700 rounded-full px-4 py-2 text-[12px] font-medium text-emerald-700 dark:text-emerald-400 mb-8 mx-auto md:mx-0 w-fit">
+               <div className="w-fit rounded-sm flex items-center gap-2.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-700 px-4 py-2 text-[12px] font-medium text-emerald-700 dark:text-emerald-400 mb-8 mx-auto md:mx-0">
                   <span className="relative flex h-2 w-2 shrink-0">
                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -112,7 +112,7 @@ export function Welcome() {
                   <motion.a
                      whileHover={{ scale: 1.05 }}
                      whileTap={{ scale: 0.95 }}
-                     href="/#contact"
+                     href="/contact"
                      className="flex items-center justify-center gap-2 bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background rounded-none shadow-none w-40 h-12 uppercase text-xs tracking-widest font-semibold transition-all duration-150">
                      Get in Touch
                   </motion.a>

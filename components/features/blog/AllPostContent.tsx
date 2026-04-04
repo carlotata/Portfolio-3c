@@ -147,7 +147,7 @@ export function AllPostsContent() {
                <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                      <Button
-                        className="h-10 px-3 sm:px-5 rounded-2m border-2 flex gap-2 sm:gap-3">
+                        className="hover:cursor-pointer h-10 px-3 sm:px-5 rounded-2m border-2 flex gap-2 sm:gap-3">
                         <Menu size={20} />
                         <span className="font-bold text-sm sm:text-base">
                            Filter

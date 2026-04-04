@@ -66,7 +66,6 @@ export function BlogLandingContent() {
          <div className="mb-16">
             <h2 className="text-2xl font-bold mb-6">Continue the Story</h2>
             <div className="grid gap-8 md:grid-cols-3">
-               {/* Card 1: The Personal Thread */}
                <Card className="border-primary/20 bg-primary/5 transition-all hover:shadow-lg flex flex-col group">
                   <CardHeader>
                      <div className="flex items-center justify-between mb-4">
@@ -101,7 +100,6 @@ export function BlogLandingContent() {
                   </CardContent>
                </Card>
 
-               {/* Card 2: Deep Dives (Category) */}
                <Card className="border-blue-500/20 bg-blue-500/5 transition-all hover:shadow-lg flex flex-col group">
                   <CardHeader>
                      <div className="flex items-center justify-between mb-4">
@@ -129,7 +127,6 @@ export function BlogLandingContent() {
                   </CardContent>
                </Card>
 
-               {/* Card 3: The Chronicle (Year) */}
                <Card className="border-purple-500/20 bg-purple-500/5 transition-all hover:shadow-lg flex flex-col group">
                   <CardHeader>
                      <div className="flex items-center justify-between mb-4">
@@ -159,7 +156,6 @@ export function BlogLandingContent() {
             </div>
          </div>
 
-         {/* Random Posts Preview Section */}
          <div className="space-y-8">
             <div className="flex items-center justify-between">
                <h2 className="text-2xl font-bold">Wander through the posts</h2>
@@ -206,7 +202,7 @@ export function BlogLandingContent() {
                <Link href="/blog/posts">
                   <Button
                      size="lg"
-                     className="group rounded-full px-8 shadow-md">
+                     className="hover:cursor-pointer group rounded-full px-8 shadow-md">
                      See the Full Journey
                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>

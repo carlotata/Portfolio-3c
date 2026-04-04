@@ -56,16 +56,16 @@ export default function MobileMenu() {
                      Blogs
                   </Link>
                   <Link
-                     href="/about"
-                     onClick={closeMenu}
-                     className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
-                     About Me
-                  </Link>
-                  <Link
                      href="/projects"
                      onClick={closeMenu}
                      className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
                      Projects
+                  </Link>
+                  <Link
+                     href="/about"
+                     onClick={closeMenu}
+                     className="px-6 py-4 text-sm font-medium hover:bg-black/5 transition-colors duration-200">
+                     About Me
                   </Link>
 
                   <div className="flex gap-3 p-4">
@@ -73,7 +73,7 @@ export default function MobileMenu() {
                         href="/contact"
                         onClick={closeMenu}
                         className="flex-1">
-                        <button className="w-full bg-black text-white text-xs font-bold py-3 rounded-full hover:bg-white hover:text-black uppercase tracking-wider transition-colors duration-200">
+                        <button className="w-full bg-black text-white text-xs font-bold py-3 rounded-sm hover:bg-white hover:text-black uppercase tracking-wider transition-colors duration-200">
                            Contact
                         </button>
                      </Link>

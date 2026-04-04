@@ -54,7 +54,7 @@ export default function Mainlayout() {
                   stiffness: 100,
                   delay: 0.8,
                }}
-               className="bg-white/80 dark:bg-zinc-900/70 backdrop-blur-xl p-5 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-white/20 dark:border-white/10 mx-2 sm:mx-0">
+               className="bg-white/80 dark:bg-zinc-900/70 backdrop-blur-xl p-5 sm:p-10 rounded-sm sm:rounded-2m shadow-2xl border border-white/20 dark:border-white/10 mx-2 sm:mx-0">
                <div className="absolute -top-2 -right-2 sm:-top-5 sm:-right-5 w-10 h-10 sm:w-12 sm:h-12 bg-[#3D3D3D] dark:bg-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg rotate-12">
                   <Sparkles className="text-white dark:text-black w-5 h-5 sm:w-6 sm:h-6" />
                </div>
@@ -88,9 +88,9 @@ export default function Mainlayout() {
                         behavior: "smooth",
                      });
                   }}
-                  className="group relative overflow-hidden bg-[#1A1A1A] dark:bg-white text-white dark:text-black w-full sm:w-auto px-8 py-4 sm:py-6 rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] hover:bg-black dark:hover:bg-neutral-200 transition-all shadow-xl">
-                  <span className="relative z-10">Contact Me</span>
-                  <div className="absolute inset-0 bg-white/10 dark:bg-black/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  className="hover:cursor-pointer group relative overflow-hidden w-full sm:w-auto px-8 py-4 sm:py-6 rounded-sm font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white">
+                  <span className="relative z-10">Message Me</span>
+                  <div className="absolute inset-0 bg-black/10 dark:bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                </Button>
             </motion.div>
          </div>

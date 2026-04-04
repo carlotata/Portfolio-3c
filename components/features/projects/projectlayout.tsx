@@ -98,7 +98,7 @@ export function ProjectLayout() {
             <div className="flex items-stretch gap-2 shrink-0">
                <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                     <Button className="h-10 px-4 rounded-2m border-2 flex gap-2">
+                     <Button className="hover:cursor-pointer h-10 px-4 rounded-2m border-2 flex gap-2">
                         <Menu size={20} />
                         <span className=" sm:inline font-bold">Filter</span>
                         <ChevronDown size={14} />

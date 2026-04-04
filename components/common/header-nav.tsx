@@ -41,15 +41,15 @@ export default function Navbar() {
                   <Link href="/blog" className={linkClass("/blog")}>
                      Blogs
                   </Link>
-                  <Link href="/about" className={linkClass("/about")}>
-                     About Me
-                  </Link>
                   <Link href="/projects" className={linkClass("/projects")}>
                      Projects
                   </Link>
+                  <Link href="/about" className={linkClass("/about")}>
+                     About Me
+                  </Link>
 
                   <Link href="/contact">
-                     <button className="px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-xl bg-black text-white hover:bg-white hover:text-black border-2 border-black dark:bg-white dark:text-black dark:border-white dark:hover:bg-black dark:hover:text-white transition-all duration-200">
+                     <button className="rounded-sm px-5 py-2 text-xs font-bold uppercase tracking-widest bg-black text-white hover:bg-white hover:cursor-pointer hover:text-black border-2 border-black dark:bg-white dark:text-black dark:border-white dark:hover:bg-black dark:hover:text-white transition-all duration-200">
                         Contact
                      </button>
                   </Link>

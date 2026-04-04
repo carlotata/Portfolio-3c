@@ -42,7 +42,6 @@ export function BlogDateContent({
 
    return (
       <div className="mx-auto px-8 py-24 max-w-6xl">
-
          <Link
             href="/blog"
             className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary mb-10 transition-colors w-fit group">
@@ -87,7 +86,7 @@ export function BlogDateContent({
                            <Button
                               variant={active ? "default" : "outline"}
                               size="sm"
-                              className={`rounded-xl capitalize transition-all ${
+                              className={`hover:cursor-pointer rounded-xl capitalize transition-all ${
                                  active
                                     ? "bg-primary shadow-lg shadow-primary/20 hover:bg-primary/90"
                                     : "hover:border-primary/50 hover:bg-primary/5"
@@ -117,7 +116,7 @@ export function BlogDateContent({
                               <Button
                                  variant={active ? "default" : "outline"}
                                  size="sm"
-                                 className={`rounded-xl capitalize transition-all ${
+                                 className={`hover:cursor-pointer rounded-xl capitalize transition-all ${
                                     active
                                        ? "bg-primary shadow-lg shadow-primary/20 hover:bg-primary/90"
                                        : "hover:border-primary/50 hover:bg-primary/5"
@@ -131,7 +130,7 @@ export function BlogDateContent({
                         <Button
                            variant="ghost"
                            size="sm"
-                           className="text-muted-foreground hover:text-primary rounded-xl">
+                           className="hover:cursor-pointer text-muted-foreground hover:text-primary rounded-xl">
                            Clear Month
                         </Button>
                      </Link>
@@ -183,7 +182,6 @@ export function BlogDateContent({
                   </Link>
                ))
             ) : (
-
                <div className="col-span-full py-24 text-center border-2 border-dashed rounded-3xl bg-muted/5 border-muted-foreground/20">
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-muted mb-6 text-muted-foreground">
                      <Calendar size={40} />

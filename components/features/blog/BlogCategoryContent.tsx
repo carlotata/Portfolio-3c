@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Layers, Hash } from "lucide-react";
 
 interface BlogCategoryContentProps {
-   activeCategories: string[]; // This usually comes from the URL params [...slug]
+   activeCategories: string[];
    filteredPosts: BlogPost[];
-   mainCategory: string; // The specific category being viewed
+   mainCategory: string;
 }
 
 export function BlogCategoryContent({
@@ -17,22 +17,17 @@ export function BlogCategoryContent({
    filteredPosts,
    mainCategory,
 }: BlogCategoryContentProps) {
-   // 1. Get ALL unique categories from all posts dynamically
-   // This ensures "web application" shows up even if it's not in your static constants
    const allUniqueCategories = Array.from(
       new Set(BLOG_POSTS.flatMap((post) => post.category)),
    ).sort();
 
-   // Helper to format category for URL (e.g., "Web Application" -> "web-application")
    const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, "-");
 
-   // Helper to check if a category matches the current URL slug
    const isMatch = (catName: string) =>
       slugify(catName) === slugify(mainCategory);
 
    return (
       <div className="mx-auto px-8 py-24 max-w-6xl">
-         {/* Navigation - Same style as AllPostsContent */}
          <Link
             href="/blog"
             className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary mb-10 transition-colors w-fit group">
@@ -42,8 +37,6 @@ export function BlogCategoryContent({
             />
             Back to Blog Hub
          </Link>
-
-         {/* Header Section - Same style as Landing */}
          <div className="flex flex-col gap-4 mb-12">
             <div className="flex items-center gap-4 text-primary">
                <div className="p-3 rounded-2xl bg-primary/10">
@@ -61,8 +54,6 @@ export function BlogCategoryContent({
                .
             </p>
          </div>
-
-         {/* Tech Stack Switcher - (Feature same as Date but for Tech) */}
          <div className="mb-12 space-y-4">
             <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-widest">
                <Hash size={14} />
@@ -76,7 +67,7 @@ export function BlogCategoryContent({
                         <Button
                            variant={active ? "default" : "outline"}
                            size="sm"
-                           className={`rounded-xl capitalize transition-all ${
+                           className={`hover:cursor-pointer rounded-xl capitalize transition-all ${
                               active
                                  ? "bg-primary shadow-lg shadow-primary/20 hover:bg-primary/90"
                                  : "hover:border-primary/50 hover:bg-primary/5"
@@ -89,7 +80,6 @@ export function BlogCategoryContent({
             </div>
          </div>
 
-         {/* Posts Grid - Matching "Discover Posts" from Landing */}
          <div className="grid gap-6 md:grid-cols-2">
             {filteredPosts.length > 0 ? (
                filteredPosts.map((post) => (
@@ -132,7 +122,7 @@ export function BlogCategoryContent({
                   </Link>
                ))
             ) : (
-               /* Empty State - Matching AllPostsContent */
+
                <div className="col-span-full py-24 text-center border-2 border-dashed rounded-3xl bg-muted/5 border-muted-foreground/20">
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-muted mb-6 text-muted-foreground">
                      <Layers size={40} />

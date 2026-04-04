@@ -3,18 +3,24 @@ import Link from "next/link";
 const navLinks = [
    { label: "Home", href: "/#top" },
    { label: "Blogs", href: "/blog" },
-   { label: "About Me", href: "/about" },
    { label: "Projects", href: "/projects" },
+   { label: "About Me", href: "/about" },
+   { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
+   { label: "GitHub", icon: "gh", href: "https://github.com/carlotata" },
    {
       label: "Facebook",
       icon: "fb",
       href: "https://www.facebook.com/jc.aviso.9/",
    },
-   { label: "GitHub", icon: "gh", href: "https://github.com/carlotata" },
    { label: "Instagram", icon: "ig", href: "https://instagram.com/jcarl_012" },
+   {
+      label: "Discord",
+      icon: "dc",
+      href: "https://discord.com",
+   },
 ];
 
 export default function Footer() {
@@ -34,7 +40,7 @@ export default function Footer() {
                   <p className="text-xs text-[#333333]/40 dark:text-white/25 leading-loose">
                      avisojohn040@gmail.com
                      <br />
-                     +63 912 345 6789
+                     +63 9762642154
                   </p>
                </div>
 

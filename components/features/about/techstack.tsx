@@ -113,7 +113,7 @@ export function TechStack() {
          <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
             Languages &amp; Frameworks
          </p>
-         <div className="flex flex-wrap gap-7 mb-10">
+         <div className="flex flex-wrap justify-center gap-7 mb-10">
             {TECH_CORE.map((t) => (
                <TechItem key={t.name} name={t.name} logo={t.logo} />
             ))}
@@ -124,7 +124,7 @@ export function TechStack() {
          <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
             Tools &amp; Platforms
          </p>
-         <div className="flex flex-wrap gap-7">
+         <div className="flex flex-wrap justify-center gap-7">
             {TECH_TOOLS.map((t) => (
                <TechItem
                   key={t.name}
