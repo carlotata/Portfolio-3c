@@ -81,15 +81,17 @@ export default function Mainlayout() {
                      </span>
                   </div>
                </div>
-
                <Button
                   onClick={() => {
                      document.getElementById("contact")?.scrollIntoView({
                         behavior: "smooth",
                      });
                   }}
-                  className="hover:cursor-pointer group relative overflow-hidden w-full sm:w-auto px-8 py-4 sm:py-6 rounded-sm font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] bg-black dark:bg-white text-white dark:text-black shadow-xl flex items-center justify-center transition-all duration-300 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white">
-                  <span className="relative z-10">Message Me</span>
+                  className="hover:cursor-pointer group relative overflow-hidden w-full sm:w-auto px-8 py-4 sm:py-6 rounded-sm font-black tracking-[0.2em] text-[10px] sm:text-xs uppercase bg-black dark:bg-white text-white dark:text-black shadow-xl flex items-center justify-center gap-3 transition-all duration-300 border-2 border-black dark:border-white hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white">
+                  <span className="relative z-10 flex items-center gap-2">
+                     Message Me
+                  </span>
+
                   <div className="absolute inset-0 bg-black/10 dark:bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                </Button>
             </motion.div>

@@ -30,14 +30,15 @@ export function ContactSection() {
    }
 
    return (
-      <section className="py-6 px-4 sm:px-10 max-w-6xl mx-auto w-full">
-         {/* Title */}
+      <section
+         id="contact"
+         className="py-6 px-4 sm:px-10 max-w-6xl mx-auto w-full">
          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center text-2xl sm:text-4xl font-black tracking-[0.3em] mb-6 text-black dark:text-white"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            Have some Questions?
+            REACH ME OUT
          </motion.h2>
 
          <p className="text-center text-sm sm:text-base text-black/60 dark:text-white/60 max-w-3xl mx-auto mb-6">
