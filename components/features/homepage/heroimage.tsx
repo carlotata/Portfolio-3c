@@ -8,7 +8,6 @@ export function HeroImage() {
 
    useEffect(() => {
       const handleScroll = () => {
-
          const threshold = 100;
          const currentScroll = window.scrollY;
          const opacity = Math.min(currentScroll / threshold, 1);
@@ -25,23 +24,25 @@ export function HeroImage() {
       <div
          className="relative h-[99%] sm:h-[80%] lg:h-[80%] pointer-events-auto group cursor-pointer"
          onClick={() => setIsToggled(!isToggled)}>
-
          <img
-            src="/3d.png"
+            src="/additionals/3d.png"
             alt="Mockup"
             style={{ opacity: isToggled ? 0 : 1 - scrollOpacity }}
-            className="h-full object-contain drop-shadow-2xl transition-opacity duration-300 ease-out 
-                   group-hover:opacity-0"
+            className="h-full object-contain drop-shadow-2xl transition-opacity duration-300 ease-out group-hover:opacity-0"
          />
 
          <img
-            src="/profile.png"
+            src="/additionals/profilenormal.png"
             alt="Real Me"
-            style={{ opacity: isToggled ? 1 : scrollOpacity }}
-            className="absolute inset-0 h-full object-contain drop-shadow-2xl transition-opacity duration-300 ease-out 
-                   opacity-0 group-hover:opacity-100"
+            style={{ opacity: showReal ? 1 : scrollOpacity }}
+            className="absolute inset-0 h-full object-contain drop-shadow-2xl transition-opacity duration-300 ease-out dark:hidden"
          />
-         
+         <img
+            src="/additionals/profileabnormal.png"
+            alt="Real Me Dark"
+            style={{ opacity: showReal ? 1 : scrollOpacity }}
+            className="absolute inset-0 h-full object-contain drop-shadow-2xl transition-opacity duration-300 ease-out hidden dark:block"
+         />
       </div>
    );
 }
