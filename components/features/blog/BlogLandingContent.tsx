@@ -53,7 +53,7 @@ export function BlogLandingContent() {
    }, []);
 
    return (
-      <div className="mx-auto px-8 py-24">
+      <div className="mx-auto py-12 px-4">
          <div className="flex flex-col gap-4 mb-12">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
                MY BLOG JOURNEY

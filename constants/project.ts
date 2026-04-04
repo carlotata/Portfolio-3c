@@ -45,4 +45,44 @@ export const projects = [
       tech: ["HTML", "CSS", "JavaScript"],
       link: "https://github.com/carlotata/2nd-Year",
    },
+   {
+      id: 6,
+      title: "Duck Game TikTok Live",
+      category: "Interactive Game",
+      description:
+         "An interactive duck-themed game for TikTok Live streams, powered by real-time viewer interaction.",
+      image: "/6.png",
+      tech: ["HTML", "CSS", "JS", "TikTokLiveConnector"],
+      link: "https://github.com/carlotata/DuckRaceGame-TikTokLive",
+   },
+   {
+      id: 7,
+      title: "Girls vs Boys",
+      category: "Interactive Game",
+      description:
+         "A competitive Girls vs Boys where viewers participate via TikTok Live.",
+      image: "/7.png",
+      tech: ["HTML", "CSS", "JS", "TikTokLiveConnector"],
+      link: "https://github.com/carlotata/GirlsvsBoys-TikTokLive",
+   },
+   {
+      id: 8,
+      title: "BedrockLive Plugin",
+      category: "Plugin Development",
+      description:
+         "A custom-made plugin for BedrockLive integration, enabling advanced live-stream features.",
+      image: "/8.png",
+      tech: ["JS", "Node.js", "TikTokLiveConnector"],
+      link: "https://github.com/carlotata/Underwaterlive",
+   },
+   {
+      id: 9,
+      title: "Excrate",
+      category: "Web Application",
+      description:
+         "An API practice project featuring a Progressive Web App (PWA) with full installation support.",
+      image: "/9.png",
+      tech: ["HTML", "CSS", "JS", "API", "PWA"],
+      link: "https://github.com/carlotata/ExcRate",
+   },
 ];

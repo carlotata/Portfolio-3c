@@ -3,25 +3,33 @@
 import { useState } from "react";
 import { ModeToggle } from "../ui/theme-toggle";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 export default function MobileMenu() {
    const [open, setOpen] = useState(false);
+   const pathname = usePathname();
 
    const closeMenu = () => setOpen(false);
 
+   const handleContact = () => {
+      closeMenu();
+      if (pathname === "/") {
+         document
+            .getElementById("contact")
+            ?.scrollIntoView({ behavior: "smooth" });
+      }
+   };
+
    return (
       <div className="sm:hidden w-full relative flex justify-center">
-         <div className="relative w-full max-w-md px-2">
-
+         <div className="relative w-full max-w-md px-2 py-1">
             <button
                onClick={() => setOpen(!open)}
                className="w-full bg-[#8A8A8A] py-3 shadow-lg flex items-center justify-center gap-3 rounded-full transition-all duration-300 hover:bg-[#7a7a7a] active:scale-95"
                aria-label="Toggle menu"
                aria-expanded={open}>
-               <span className="text-sm font-semibold uppercase tracking-wide">
-                  Menu
-               </span>
+               <span className="text-sm font-semibold uppercase tracking-wide"></span>
 
                <div className="space-y-1.5 transition-transform duration-300">
                   <span
@@ -75,16 +83,14 @@ export default function MobileMenu() {
                   </Link>
 
                   <div className="flex gap-3 p-4">
-                     <Button
-                        className="flex-1 bg-[#444444] text-white text-xs font-bold py-3 rounded-full hover:bg-black uppercase tracking-wider transition-colors duration-200"
-                        onClick={() => {
-                           document.getElementById("contact")?.scrollIntoView({
-                              behavior: "smooth",
-                           });
-                           closeMenu();
-                        }}>
-                        MESSAGE NOW
-                     </Button>
+                     <Link
+                        href="/#contact"
+                        onClick={handleContact}
+                        className="flex-1">
+                        <Button className="w-full bg-[#444444] text-white text-xs font-bold py-3 rounded-full hover:bg-black uppercase tracking-wider transition-colors duration-200">
+                           MESSAGE NOW
+                        </Button>
+                     </Link>
                      <ModeToggle />
                   </div>
                </nav>

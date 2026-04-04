@@ -12,8 +12,6 @@ import {
    Tag,
    X,
    ChevronDown,
-   ChevronLeft,
-   ChevronRight,
 } from "lucide-react";
 import {
    DropdownMenu,
@@ -24,21 +22,44 @@ import {
    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+   Pagination,
+   PaginationContent,
+   PaginationItem,
+   PaginationLink,
+   PaginationNext,
+   PaginationPrevious,
+} from "@/components/ui/pagination";
 
 const POSTS_PER_PAGE = 8;
+
+const getPageNums = (current: number, total: number): (number | string)[] => {
+   if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+   const left = current - 1,
+      right = current + 1;
+   const result: (number | string)[] = [];
+   for (let i = 1; i <= total; i++) {
+      if (i === 1 || i === total || (i >= left && i <= right)) {
+         result.push(i);
+      } else if (result[result.length - 1] !== "...") {
+         result.push("...");
+      }
+   }
+   return result;
+};
 
 export function AllPostsContent() {
    const [searchQuery, setSearchQuery] = useState("");
    const [selectedYear, setSelectedYear] = useState("All");
    const [selectedCategory, setSelectedCategory] = useState("All");
-   const [currentPage, setCurrentPage] = useState(1); // Pagination State
+   const [currentPage, setCurrentPage] = useState(1);
    const [isMounted, setIsMounted] = useState(false);
 
    useEffect(() => {
       setIsMounted(true);
    }, []);
 
-   // Reset to page 1 when filters change
    useEffect(() => {
       setCurrentPage(1);
    }, [searchQuery, selectedYear, selectedCategory]);
@@ -82,7 +103,6 @@ export function AllPostsContent() {
          });
    }, [searchQuery, selectedYear, selectedCategory]);
 
-   // Pagination Logic
    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
    const paginatedPosts = useMemo(() => {
       const start = (currentPage - 1) * POSTS_PER_PAGE;
@@ -127,8 +147,7 @@ export function AllPostsContent() {
                <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                      <Button
-                        variant="outline"
-                        className="h-10 px-3 sm:px-5 rounded-2xl border-2 flex gap-2 sm:gap-3 hover:bg-muted">
+                        className="h-10 px-3 sm:px-5 rounded-2m border-2 flex gap-2 sm:gap-3 hover:bg-muted">
                         <Menu size={20} />
                         <span className="font-bold text-sm sm:text-base">
                            Filter
@@ -141,7 +160,7 @@ export function AllPostsContent() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                      align="start"
-                     className="w-64 rounded-2xl p-2">
+                     className="w-64 rounded-2m p-2">
                      <DropdownMenuLabel className="flex items-center gap-2 opacity-70">
                         <Calendar size={14} /> Years
                      </DropdownMenuLabel>
@@ -183,21 +202,19 @@ export function AllPostsContent() {
                      variant="ghost"
                      onClick={resetFilters}
                      className="text-muted-foreground hover:text-destructive h-10 px-2 sm:px-4">
-                     <X size={16} className="sm:mr-2" />{" "}
+                     <X size={16} className="sm:mr-2" />
                      <span className="hidden sm:inline">Clear</span>
                   </Button>
                )}
             </div>
 
-            <div className="relative flex-1 md:w-96 md:flex-none group">
-               <input
-                  type="text"
-                  placeholder="Search..."
-                  className="w-full h-10 pl-4 pr-4 py-3 rounded-2xl border-2 border-muted bg-muted/20 focus:bg-background focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all text-sm sm:text-base"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-               />
-            </div>
+            <Input
+               type="text"
+               placeholder="Search..."
+               value={searchQuery}
+               onChange={(e) => setSearchQuery(e.target.value)}
+               className="flex-1 md:w-96 md:flex-none h-10 rounded-2m border-2 border-muted bg-muted/20 focus:bg-background focus-visible:ring-4 focus-visible:ring-primary/10 focus-visible:border-primary text-sm sm:text-base"
+            />
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -249,43 +266,52 @@ export function AllPostsContent() {
             )}
          </div>
 
-         {totalPages > 1 && (
-            <div className="py-10 mt-12 flex justify-center items-center gap-2">
-               <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-xl"
-                  onClick={() =>
-                     setCurrentPage((prev) => Math.max(prev - 1, 1))
-                  }
-                  disabled={currentPage === 1}>
-                  <ChevronLeft size={20} />
-               </Button>
+         <Pagination className="mt-10 py-12">
+            <PaginationContent>
+               <PaginationItem>
+                  <PaginationPrevious
+                     href="#"
+                     onClick={(e) => {
+                        e.preventDefault();
+                        if (currentPage > 1) setCurrentPage(currentPage - 1);
+                     }}
+                  />
+               </PaginationItem>
 
-               <div className="flex gap-2">
-                  {[...Array(totalPages)].map((_, i) => (
-                     <Button
-                        key={i + 1}
-                        variant={currentPage === i + 1 ? "default" : "outline"}
-                        className="w-10 h-10 rounded-xl"
-                        onClick={() => setCurrentPage(i + 1)}>
-                        {i + 1}
-                     </Button>
-                  ))}
-               </div>
+               {getPageNums(currentPage, totalPages).map((p, i) =>
+                  p === "..." ? (
+                     <PaginationItem key={`ellipsis-${i}`}>
+                        <span className="px-3 py-2 text-muted-foreground">
+                           ···
+                        </span>
+                     </PaginationItem>
+                  ) : (
+                     <PaginationItem key={p}>
+                        <PaginationLink
+                           href="#"
+                           isActive={currentPage === p}
+                           onClick={(e) => {
+                              e.preventDefault();
+                              setCurrentPage(p as number);
+                           }}>
+                           {p}
+                        </PaginationLink>
+                     </PaginationItem>
+                  ),
+               )}
 
-               <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-xl"
-                  onClick={() =>
-                     setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                  }
-                  disabled={currentPage === totalPages}>
-                  <ChevronRight size={20} />
-               </Button>
-            </div>
-         )}
+               <PaginationItem>
+                  <PaginationNext
+                     href="#"
+                     onClick={(e) => {
+                        e.preventDefault();
+                        if (currentPage < totalPages)
+                           setCurrentPage(currentPage + 1);
+                     }}
+                  />
+               </PaginationItem>
+            </PaginationContent>
+         </Pagination>
       </div>
    );
 }
