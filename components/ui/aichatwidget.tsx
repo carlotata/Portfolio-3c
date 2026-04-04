@@ -106,7 +106,6 @@ const ChatWidget = () => {
                },
             ]);
          }
-         // Scroll to the most recent message whenever the widget is opened
          setTimeout(() => {
             bottomRef.current?.scrollIntoView({ behavior: "instant" });
          }, 50);
@@ -181,7 +180,6 @@ const ChatWidget = () => {
             .send-btn:hover:not(:disabled) { background: #333; }
             .dark .send-btn:hover:not(:disabled) { background: #e5e5e5; color: #111; }
 
-            /* AI bubble: prevent URL overflow */
             .ai-bubble {
                overflow-wrap: anywhere;
                word-break: break-word;
@@ -195,13 +193,28 @@ const ChatWidget = () => {
                opacity: 0.85;
             }
             .ai-bubble a:hover { opacity: 0.6; }
+
+            /* Mobile full-screen panel */
+            @media (max-width: 639px) {
+               .chat-panel {
+                  position: fixed !important;
+                  inset: 0 !important;
+                  width: 100vw !important;
+                  height: 100dvh !important;
+                  border-radius: 0 !important;
+                  border: none !important;
+                  animation: slideMobileUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+               }
+               @keyframes slideMobileUp {
+                  from { opacity: 0; transform: translateY(100%); }
+                  to   { opacity: 1; transform: translateY(0); }
+               }
+            }
          `}</style>
 
          <div className="chat-widget fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
             {isOpen && (
-               <div
-                  className="chat-panel w-[340px] bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
-                  style={{ height: "480px" }}>
+               <div className="chat-panel bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden sm:w-[340px] sm:h-120">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 dark:border-gray-800">
                      <div className="flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-green-500 shadow-sm shadow-green-400" />
@@ -222,7 +235,6 @@ const ChatWidget = () => {
                      </button>
                   </div>
 
-                  {/* Messages */}
                   <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 scroll-smooth">
                      {messages.map((msg, idx) => (
                         <div
@@ -265,6 +277,7 @@ const ChatWidget = () => {
                      <div ref={bottomRef} />
                   </div>
 
+                  {/* Input */}
                   <div className="px-3 pb-3 pt-2 border-t border-gray-100 dark:border-gray-800">
                      <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 rounded-xl px-3 py-1.5 transition-colors focus-within:border-gray-900 dark:focus-within:border-gray-400">
                         <input
@@ -293,7 +306,7 @@ const ChatWidget = () => {
             <button
                onClick={() => setIsOpen(!isOpen)}
                aria-label="Toggle chat"
-               className="chat-toggle w-12 h-12 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg flex items-center justify-center">
+               className={`chat-toggle w-12 h-12 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg flex items-center justify-center ${isOpen ? "sm:flex hidden" : "flex"}`}>
                {isOpen ? (
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                      <path
