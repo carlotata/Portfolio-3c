@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 interface Message {
    from: "user" | "ai";
@@ -94,11 +94,14 @@ const ChatWidget = () => {
    const [loading, setLoading] = useState(false);
    const bottomRef = useRef<HTMLDivElement>(null);
    const inputRef = useRef<HTMLInputElement>(null);
+   const abortControllerRef = useRef<AbortController | null>(null);
+
+   const messageCount = messages.length;
 
    useEffect(() => {
       if (isOpen) {
          setTimeout(() => inputRef.current?.focus(), 100);
-         if (messages.length === 0) {
+         if (messageCount === 0) {
             setMessages([
                {
                   from: "ai",
@@ -110,13 +113,19 @@ const ChatWidget = () => {
             bottomRef.current?.scrollIntoView({ behavior: "instant" });
          }, 50);
       }
-   }, [isOpen]);
+   }, [isOpen, messageCount]); 
 
    useEffect(() => {
       bottomRef.current?.scrollIntoView({ behavior: "smooth" });
    }, [messages, loading]);
 
-   const sendMessage = async () => {
+   useEffect(() => {
+      return () => {
+         abortControllerRef.current?.abort();
+      };
+   }, []);
+
+   const sendMessage = useCallback(async () => {
       if (!input.trim() || loading) return;
 
       const userMessage = input.trim();
@@ -124,24 +133,31 @@ const ChatWidget = () => {
       setInput("");
       setLoading(true);
 
+      const controller = new AbortController();
+      abortControllerRef.current = controller;
+
       try {
          const res = await fetch("/api/openrouter", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: userMessage }),
+            signal: controller.signal, 
          });
 
          const data = await res.json();
          setMessages((prev) => [...prev, { from: "ai", text: data.answer }]);
-      } catch {
+      } catch (err) {
+
+         if (err instanceof Error && err.name === "AbortError") return;
          setMessages((prev) => [
             ...prev,
             { from: "ai", text: "Something went wrong. Please try again." },
          ]);
       } finally {
          setLoading(false);
+         abortControllerRef.current = null;
       }
-   };
+   }, [input, loading]);
 
    return (
       <>
@@ -214,7 +230,7 @@ const ChatWidget = () => {
 
          <div className="chat-widget fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
             {isOpen && (
-               <div className="chat-panel bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden sm:w-[340px] sm:h-120">
+               <div className="chat-panel bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden sm:w-85 sm:h-120">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 dark:border-gray-800">
                      <div className="flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-green-500 shadow-sm shadow-green-400" />
@@ -231,7 +247,7 @@ const ChatWidget = () => {
                         onClick={() => setIsOpen(false)}
                         className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors text-lg leading-none"
                         aria-label="Close chat">
-                        ×
+                        x
                      </button>
                   </div>
 

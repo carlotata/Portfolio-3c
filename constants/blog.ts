@@ -26,7 +26,6 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
-   // Original 5 blog posts
    {
       id: "1",
       slug: "june-2023-to-present",
@@ -176,7 +175,6 @@ export const BLOG_POSTS: BlogPost[] = [
       author: "John Carl Aviso",
    },
 
-   // 2nd Year (2024) - The Transition to UI/UX
    {
       id: "14",
       slug: "intro-to-ui-ux",
@@ -218,7 +216,6 @@ export const BLOG_POSTS: BlogPost[] = [
       author: "John Carl Aviso",
    },
 
-   // 3rd Year (Late 2024 - 2025) - Professional Polish
    {
       id: "18",
       slug: "advanced-figma-components",

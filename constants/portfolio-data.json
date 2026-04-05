@@ -3,7 +3,61 @@
       "name": "John Carl Aviso",
       "title": "Frontend / UI/UX Developer",
       "location": "Cebu City, Philippines",
-      "bio": "I build modern, responsive web apps and immersive UI/UX designs, blending design and code seamlessly. My portfolio showcases projects spanning web applications, Figma designs, and interactive experiences."
+      "bio": "...",
+      "email": "your@email.com",
+      "availability": "Open to freelance and full-time opportunities",
+      "languages": ["English", "Filipino"],
+      "hobbies": ["UI design", "watching anime", "gaming"],
+      "teacher": "...",
+      "school": "...",
+      "year": "3rd year College",
+      "section": "BSIT-3C",
+      "course": "Bachelor of Science in Information Technology (BSIT)"
+   },
+   "portfolioTechStack": {
+      "description": "The technologies used to build this portfolio website itself.",
+      "stack": [
+         {
+            "name": "Next.js",
+            "category": "Framework",
+            "purpose": "Core framework — App Router, server components, and API routes"
+         },
+         {
+            "name": "TypeScript",
+            "category": "Language",
+            "purpose": "Type-safe development across all components and API routes"
+         },
+         {
+            "name": "Tailwind CSS",
+            "category": "Styling",
+            "purpose": "Utility-first CSS for all layout and design"
+         },
+         {
+            "name": "Framer Motion",
+            "category": "Animation",
+            "purpose": "Page transitions and interactive animations"
+         },
+         {
+            "name": "shadcn/ui",
+            "category": "UI Components",
+            "purpose": "Prebuilt accessible components as the base UI library"
+         },
+         {
+            "name": "SendEmail",
+            "category": "Email",
+            "purpose": "Handles contact form email sending"
+         },
+         {
+            "name": "OpenRouter",
+            "category": "AI",
+            "purpose": "Powers the portfolio AI chat assistant via free LLM models"
+         },
+         {
+            "name": "Vercel",
+            "category": "Deployment",
+            "purpose": "Hosting and deployment platform"
+         }
+      ]
    },
    "skills": {
       "frontend": [
@@ -106,46 +160,189 @@
          "link": "https://github.com/carlotata/ExcRate"
       }
    ],
-   "blogPosts": [
-      {
-         "id": 1,
-         "title": "My 3rd Year Roadmap",
-         "excerpt": "A retrospective on my progress from Cordova Public College to building full-stack design systems.",
-         "categories": ["academic", "roadmap"],
-         "date": "2025-02-15"
-      },
-      {
-         "id": 2,
-         "title": "Motion as a Design Language",
-         "excerpt": "How I use Framer Motion to make my Next.js projects feel tactile and alive.",
-         "categories": ["design", "framer"],
-         "date": "2025-03-01"
-      },
-      {
-         "id": 3,
-         "title": "Figma to Tailwind Workflow",
-         "excerpt": "Translating high-fidelity prototypes into production code.",
-         "categories": ["tech", "figma"],
-         "date": "2024-11-10"
-      },
-      {
-         "id": 4,
-         "title": "Why I Switched to the App Router",
-         "excerpt": "File-based routing, server components, and layouts in Next.js.",
-         "categories": ["tech", "nextjs"],
-         "date": "2025-01-20"
-      },
-      {
-         "id": 5,
-         "title": "Designing Robo Sole",
-         "excerpt": "A breakdown of the futuristic sneaker UI/UX I built for a client in Figma.",
-         "categories": ["design", "figma"],
-         "date": "2025-03-10"
-      }
-   ],
+   "blog": {
+      "categories": [
+         { "slug": "tech", "name": "Technology" },
+         { "slug": "design", "name": "Design" },
+         { "slug": "academic", "name": "Academic" },
+         { "slug": "roadmap", "name": "Roadmap" },
+         { "slug": "nextjs", "name": "Next.js", "parent": "tech" },
+         { "slug": "framer", "name": "Framer Motion", "parent": "tech" },
+         { "slug": "figma", "name": "Figma", "parent": "design" }
+      ],
+      "posts": [
+         {
+            "id": "1",
+            "slug": "june-2023-to-present",
+            "title": "My 3rd Year Roadmap",
+            "excerpt": "A retrospective on my progress from Cordova Public College to building full-stack design systems.",
+            "category": ["academic", "roadmap"],
+            "date": "2025-02-15"
+         },
+         {
+            "id": "2",
+            "slug": "framer-motion-for-designers",
+            "title": "Motion as a Design Language",
+            "excerpt": "How I use Framer Motion to make my Next.js projects feel tactile and alive.",
+            "category": ["design", "framer"],
+            "date": "2025-03-01"
+         },
+         {
+            "id": "3",
+            "slug": "figma-pixel-perfection",
+            "title": "Figma to Tailwind Workflow",
+            "excerpt": "My 1:1 workflow for translating high-fidelity prototypes into production code.",
+            "category": ["tech", "figma"],
+            "date": "2024-11-10"
+         },
+         {
+            "id": "4",
+            "slug": "building-with-nextjs-app-router",
+            "title": "Why I Switched to the App Router",
+            "excerpt": "File-based routing, server components, and layouts — and why it changed how I build.",
+            "category": ["tech", "nextjs"],
+            "date": "2025-01-20"
+         },
+         {
+            "id": "5",
+            "slug": "designing-robo-sole",
+            "title": "Designing Robo Sole",
+            "excerpt": "A breakdown of the futuristic sneaker UI/UX I built for a client in Figma.",
+            "category": ["design", "figma"],
+            "date": "2025-03-10"
+         },
+         {
+            "id": "6",
+            "slug": "robo-sole-project",
+            "title": "Robo Sole",
+            "excerpt": "A futuristic design mock-up using Figma by a client request.",
+            "category": ["design", "figma"],
+            "date": "2025-03-12",
+            "link": "https://www.figma.com/design/U4W0ZE9jRWKjl9HSaZPv3T/DESIGN-SAMPLES?node-id=123-30"
+         },
+         {
+            "id": "7",
+            "slug": "fitlife",
+            "title": "FitLife",
+            "excerpt": "A simple Fitness UI/UX Design.",
+            "category": ["design", "figma"],
+            "date": "2025-03-13",
+            "link": "https://www.figma.com/design/U4W0ZE9jRWKjl9HSaZPv3T/DESIGN-SAMPLES?node-id=61-30"
+         },
+         {
+            "id": "8",
+            "slug": "apex-vision",
+            "title": "Apex Vision",
+            "excerpt": "A minimalistic Sports Glass UI/UX Design.",
+            "category": ["design", "figma"],
+            "date": "2025-03-14",
+            "link": "https://www.figma.com/design/U4W0ZE9jRWKjl9HSaZPv3T/DESIGN-SAMPLES?node-id=178-30"
+         },
+         {
+            "id": "9",
+            "slug": "1st-year-projects",
+            "title": "1st Year Projects",
+            "excerpt": "A compilation of my 1st Year Projects.",
+            "category": ["tech", "web-application"],
+            "date": "2025-03-15",
+            "link": "https://github.com/carlotata/1st-Year"
+         },
+         {
+            "id": "10",
+            "slug": "2nd-year-projects",
+            "title": "2nd Year Projects",
+            "excerpt": "A compilation of my 2nd Year Projects.",
+            "category": ["tech", "web-application"],
+            "date": "2025-03-16",
+            "link": "https://github.com/carlotata/2nd-Year"
+         },
+         {
+            "id": "11",
+            "slug": "hello-world-cpc",
+            "title": "First Day at CPC",
+            "excerpt": "Documenting the start of my journey at Cordova Public College.",
+            "category": ["academic"],
+            "date": "2023-08-15"
+         },
+         {
+            "id": "12",
+            "slug": "html-css-mastery",
+            "title": "Semantic HTML & CSS Layouts",
+            "excerpt": "Moving beyond basic tags to building structured, accessible web foundations.",
+            "category": ["tech", "web-application"],
+            "date": "2023-10-10"
+         },
+         {
+            "id": "13",
+            "slug": "c-plus-plus-logic",
+            "title": "Logic Building with C++",
+            "excerpt": "Understanding pointers, loops, and the gritty details of computer science.",
+            "category": ["academic", "tech"],
+            "date": "2023-11-20"
+         },
+         {
+            "id": "14",
+            "slug": "intro-to-ui-ux",
+            "title": "Introduction to UI/UX Design",
+            "excerpt": "The moment I realized code is nothing without a good user experience.",
+            "category": ["design", "figma"],
+            "date": "2024-02-05"
+         },
+         {
+            "id": "15",
+            "slug": "database-management-101",
+            "title": "SQL & Database Design",
+            "excerpt": "Structuring data for scalability and performance.",
+            "category": ["academic", "tech"],
+            "date": "2024-04-12"
+         },
+         {
+            "id": "16",
+            "slug": "javascript-dom-manipulation",
+            "title": "Vanilla JS Magic",
+            "excerpt": "Making the web interactive without frameworks.",
+            "category": ["tech", "web-application"],
+            "date": "2024-07-22"
+         },
+         {
+            "id": "17",
+            "slug": "responsive-design-strategies",
+            "title": "Responsive Design Strategies",
+            "excerpt": "How I approach Mobile First development in my projects.",
+            "category": ["tech", "design"],
+            "date": "2024-09-30"
+         },
+         {
+            "id": "18",
+            "slug": "advanced-figma-components",
+            "title": "Design Systems in Figma",
+            "excerpt": "Using auto-layout and variables to build enterprise-grade systems.",
+            "category": ["design", "figma"],
+            "date": "2024-12-15"
+         },
+         {
+            "id": "19",
+            "slug": "state-management-evolution",
+            "title": "The Evolution of State",
+            "excerpt": "From Props to Context to Server-side state.",
+            "category": ["tech", "nextjs"],
+            "date": "2025-01-05"
+         },
+         {
+            "id": "20",
+            "slug": "future-of-personal-branding",
+            "title": "The Tech Portfolio of 2025",
+            "excerpt": "Reflecting on why I built this archive and where I'm going next.",
+            "category": ["roadmap", "academic"],
+            "date": "2025-03-20"
+         }
+      ]
+   },
    "contact": {
-      "email": "[your email]",
+      "email": "avisojohn040@gmail.com",
       "github": "https://github.com/carlotata",
-      "linkedin": "[your LinkedIn URL]"
+      "phone_number": "+639762642154",
+      "facebook": "https://www.facebook.com/jc.aviso.9/",
+      "instagram": "https://www.instagram.com/jcarl_012"
    }
 }
