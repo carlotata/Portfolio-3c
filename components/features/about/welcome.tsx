@@ -8,6 +8,7 @@ export function Welcome() {
    const statsRef = useRef<HTMLDivElement>(null);
    const isInView = useInView(statsRef, { once: true });
    const [projectsCount, setProjectsCount] = useState(0);
+   const [loaded, setLoaded] = useState(false); 
 
    // Animate projects count
    useEffect(() => {
@@ -27,32 +28,41 @@ export function Welcome() {
    return (
       <section className="py-20 px-4 sm:px-10 max-w-6xl mx-auto overflow-hidden">
          <div className="flex flex-col md:flex-row items-center justify-between gap-32 md:gap-40">
-            {/* Profile Image */}
+
             <motion.div
                initial={{ opacity: 0, x: -50 }}
                animate={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.8, ease: "easeOut" }}
                className="relative w-75 h-95 md:w-105 md:h-125 shrink-0">
                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-75 h-75 md:w-105 md:h-105 bg-muted rounded-full z-0" />
+
                <div className="absolute inset-0 z-10">
+                  {!loaded && (
+                     <div className="absolute inset-0 bg-muted animate-pulse rounded-full" />
+                  )}
+
                   <Image
                      src="/additionals/aboutmenormal.png"
                      alt="Profile photo"
                      fill
-                     className="object-contain object-bottom drop-shadow-md dark:hidden"
-                     priority
+                     className={`object-contain object-bottom drop-shadow-md dark:hidden transition-opacity duration-500 ${
+                        loaded ? "opacity-100" : "opacity-0"
+                     }`}
+                     onLoadingComplete={() => setLoaded(true)}
                   />
+
                   <Image
                      src="/additionals/aboutmeabnormal.png"
                      alt="Profile photo"
                      fill
-                     className="object-contain object-bottom drop-shadow-md hidden dark:block"
-                     priority
+                     className={`object-contain object-bottom drop-shadow-md hidden dark:block transition-opacity duration-500 ${
+                        loaded ? "opacity-100" : "opacity-0"
+                     }`}
+                     onLoadingComplete={() => setLoaded(true)}
                   />
                </div>
             </motion.div>
 
-            {/* Text Content */}
             <motion.div
                initial={{ opacity: 0, x: 50 }}
                animate={{ opacity: 1, x: 0 }}
@@ -125,7 +135,6 @@ export function Welcome() {
                   </motion.a>
                </div>
 
-               {/* Stats */}
                <div
                   ref={statsRef}
                   className="flex flex-row gap-8 mt-10 pt-2 border-t border-border/30 w-full max-w-100 mx-auto md:mx-0 justify-center md:justify-start">

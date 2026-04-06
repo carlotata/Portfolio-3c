@@ -1,3 +1,5 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,11 +24,14 @@ export interface Project {
 
 interface ProjectCardProps {
    project: Project;
+   onClick?: () => void;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, onClick }: ProjectCardProps) {
    return (
-      <Card className="group relative flex flex-col w-full h-full overflow-hidden shadow-xl">
+      <Card
+         className="group relative flex flex-col w-full h-full overflow-hidden shadow-xl cursor-pointer"
+         onClick={onClick}>
          <div className="relative w-full aspect-4/3 overflow-hidden bg-muted">
             <div className="absolute py-2 left-2 z-12">
                <Badge
@@ -74,11 +79,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
          )}
 
          <CardFooter className="pt-0">
-            <Button asChild className="w-full group/btn" size="sm">
-               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  View Project
-                  <ExternalLink className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
-               </a>
+            <Button className="w-full group/btn pointer-events-none" size="sm">
+               View Details
+               <ExternalLink className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
             </Button>
          </CardFooter>
       </Card>

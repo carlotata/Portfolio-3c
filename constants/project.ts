@@ -1,4 +1,15 @@
-export const projects = [
+export interface Project {
+   id: number;
+   title: string;
+   category: string;
+   description: string;
+   image: string;
+   tech: string[];
+   link: string;
+   liveLink?: string;
+}
+
+export const projects: Project[] = [
    {
       id: 1,
       title: "Robo Sole",
@@ -54,6 +65,7 @@ export const projects = [
       image: "/projectscreenshot/6.png",
       tech: ["HTML", "CSS", "JS", "TikTokLiveConnector"],
       link: "https://github.com/carlotata/DuckRaceGame-TikTokLive",
+      liveLink: "https://carlotata.github.io/DuckRaceGame-TikTokLive/",
    },
    {
       id: 7,
@@ -64,6 +76,7 @@ export const projects = [
       image: "/projectscreenshot/7.png",
       tech: ["HTML", "CSS", "JS", "TikTokLiveConnector"],
       link: "https://github.com/carlotata/GirlsvsBoys-TikTokLive",
+      liveLink: "https://carlotata.github.io/GirlsvsBoys-TikTokLive/",
    },
    {
       id: 8,
@@ -71,7 +84,7 @@ export const projects = [
       category: "Plugin Development",
       description:
          "A custom-made plugin for BedrockLive integration, enabling advanced live-stream features.",
-      image: "/projectscreenshot/8.png",
+      image: "/projectscreenshot/9.png",
       tech: ["JS", "Node.js", "TikTokLiveConnector"],
       link: "https://github.com/carlotata/Underwaterlive",
    },
@@ -81,8 +94,9 @@ export const projects = [
       category: "Web Application",
       description:
          "An API practice project featuring a Progressive Web App (PWA) with full installation support.",
-      image: "/projectscreenshot/9.png",
+      image: "/projectscreenshot/8.png",
       tech: ["HTML", "CSS", "JS", "API", "PWA"],
       link: "https://github.com/carlotata/ExcRate",
+      liveLink: "https://carlotata.github.io/ExcRate/",
    },
 ];
