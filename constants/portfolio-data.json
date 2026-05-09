@@ -48,7 +48,7 @@
             "purpose": "Handles contact form email sending"
          },
          {
-            "name": "OpenRouter",
+            "name": "Gemini",
             "category": "AI",
             "purpose": "Powers the portfolio AI chat assistant via free LLM models"
          },
